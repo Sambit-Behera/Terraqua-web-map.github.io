@@ -1,0 +1,370 @@
+ html,
+ body {
+     height: 100%;
+     padding: 0;
+     margin: 0;
+     font-family: arial;
+
+ }
+
+ #map {
+     position: absolute;
+     left: 0%;
+     width: 100%;
+     height: 100%;
+     border-style: solid;
+     border-color: black;
+     border-width: thin;
+     z-index: 10;
+
+ }
+
+ nav {
+     background-color: #000000;
+     overflow: hidden;
+     position: fixed;
+     border: rgb(255, 255, 255);
+     width: 100%;
+     top: 0;
+     z-index: 1000;
+ }
+
+ 
+
+
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+ ::after,
+ ::before {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ li {
+     list-style: none;
+ }
+
+ h1 {
+     font-weight: 600;
+     font-size: 1.5rem;
+ }
+
+ .leaflet-control-zoom {
+     display: none !important;
+     top: 200px;
+     /* Adjust as needed */
+     position: fixed;
+     right: 5px;
+     /* Adjust as needed */
+     background-color: #f4f7fa;
+     border: 5px solid #080808;
+     border-radius: 10px;
+     padding: 10px;
+     z-index: 1000;
+     size: 0px;
+     /* Adjust as needed */
+ }
+
+ .leaflet-control-layers {
+
+     position: fixed;
+     border-radius: 10px;
+     background-color: #ffffff;
+     top: 30%;
+     right: 0.5%;
+     /* Adjust as needed */
+     z-index: 1000;
+ }
+
+ #query_tab {
+     position: absolute;
+     padding: 2% 0.2%;
+     left: 0%;
+     width: 0%;
+     height: 100%;
+     border-style: solid;
+     border-color: rgb(0, 0, 0);
+     border-width: thin;
+     visibility: hidden;
+     overflow: scroll;
+
+ }
+
+ #legend {
+     z-index: 11;
+     padding: 2px 4px;
+     border: 1px solid grey;
+     border-radius: 5px;
+     position: absolute;
+     bottom: 8%;
+     height: 0%;
+     overflow: scroll;
+     width: 0%;
+     right: 0%;
+     z-index: 999;
+     background-color: #ffffffd9;
+     font-weight: bold;
+     visibility: hidden;
+
+ }
+
+ #layer {
+     position: relative;
+     width: 70%;
+ }
+
+ #attributes {
+     position: relative;
+     width: 70%;
+ }
+
+ #operator {
+     position: relative;
+     width: 70%;
+ }
+
+ #value {
+     position: relative;
+     width: 70%;
+ }
+
+ #table_data {
+     position: absolute;
+     bottom: 0%;
+     overflow: scroll;
+     left: 0%;
+     right: 0%;
+     height: 0%;
+     border: 1px solid #4CAF50;
+ }
+
+ #table {
+     white-space: nowrap;
+     grid-template-areas: "head-fixed" "body-scrollable";
+ }
+
+
+ #table th {
+     position: -webkit-sticky;
+     /* for Safari */
+     position: sticky;
+     top: 0px;
+     background-color: rgb(122, 209, 100);
+ }
+
+ #legend_btn {
+     position: absolute;
+     z-index: 600;
+     bottom: 1.5%;
+     right: 40%;
+ }
+
+ #table_wms_layers {
+     white-space: nowrap;
+     grid-template-areas: "head-fixed" "body-scrollable";
+ }
+
+ #table_wms_layers th {
+     position: -webkit-sticky;
+     /* for Safari */
+     position: sticky;
+     top: 0px;
+     background-color: rgb(236, 101, 17);
+ }
+
+ .modal-dialog {
+     width: 40% !important;
+     height: 60% !important;
+     top: 18% !important;
+
+
+
+ }
+
+ .form-select {
+     left: 0%;
+     width: 85% !important;
+
+ }
+
+ .form-control {
+     left: 0%;
+     width: 85% !important;
+
+ }
+
+ .leaflet-popup-content {
+     width: auto !important;
+ }
+
+ #clear_btn {
+     position: absolute;
+     z-index: 500;
+     top: 50%;
+     left: 40%;
+
+ }
+
+ #info_btn{
+    position:relative ;
+    background-color: #08080800;
+    color: #f4f7fa;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+    right: 3px; 
+ }
+
+ /* Default style (off) */
+ 
+ /* Style for the image */
+ 
+
+ #query_panel_btn {
+     position: absolute;
+     background-color: #08080800;
+     color: #f4f7fa;
+     cursor: pointer;
+     border: none;
+     border-radius: 0px;
+ }
+
+ #legend_btn{
+    position:relative ;
+     background-color: #08080800;
+     color: #f4f7fa;
+     cursor: pointer;
+     border: none;
+     border-radius: 0px;
+     right: 3px;
+ }
+
+ #download-btn{
+    position:relative ;
+    background-color: #08080800;
+    color: #f4f7fa;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;
+    right: 3px; 
+ }
+ 
+ .btn.btn-primary1{
+    position: absolute;
+    z-index: 500;
+    top: 94%;
+    left: 85%;
+    background-color: #3b7ddd;
+    color: #f4f7fa; 
+    border-radius: 5px;
+    
+}
+
+#add-file-button{
+    position: absolute;
+    background-color: #08080800;
+    color: #f7f9fb;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px;   
+}
+   
+ /* Styling for the offcanvas */
+ .offcanvas {
+     width: 300px;
+     /* Adjust as needed */
+     background-color: #201f1fb9;
+     /* Background color */
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     /* Optional: Add shadow for depth */
+ }
+
+ /* Styling for the offcanvas header */
+ .offcanvas-header {
+     background-color: #121213d3;
+     /* Header background color */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+     /* Border bottom */
+
+
+ }
+
+ /* Styling for the offcanvas body */
+ .offcanvas-body {
+     padding: 15px;
+     /* Padding for the body */
+ }
+
+ .sidebar-nav {
+     padding: 2rem 0;
+     flex: 1 1 auto;
+ }
+
+ a.sidebar-link {
+     padding: .625rem 1.625rem;
+     color: #FFF;
+     display: block;
+     font-size: 0.9rem;
+     white-space: nowrap;
+     border-left: 3px solid transparent;
+ }
+
+ .sidebar-link i {
+     font-size: 1.1rem;
+     margin-right: .75rem;
+ }
+
+ a.sidebar-link:hover {
+     background-color: rgba(255, 255, 255, .075);
+     border-left: 3px solid #3b7ddd;
+ }
+
+ 
+
+ 
+ #offcanvasRightLabel {
+     color: #f4f7fa;
+     margin: 0;
+
+ }
+
+ #Qp{
+    color: #080808;
+    margin-right: 50%;
+    margin-top: 0%;
+ }
+ 
+ .logo{
+    width: 100px;
+    height: auto;
+    padding: 0;
+    margin: 2px;
+    margin-top: 0;
+ }
+
+ .nav-link{
+    text-align:center;
+    padding: 14px 16px;
+    margin-top: 22px;
+    margin-left: 20px;
+    text-decoration: none;
+ }
+  
+
+
+  
+  
+ 
+ 
+  
+
